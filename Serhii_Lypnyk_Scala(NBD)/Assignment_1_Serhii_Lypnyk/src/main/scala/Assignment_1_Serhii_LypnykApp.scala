@@ -1,9 +1,11 @@
 import scala.Console.in
 import scala.collection.IterableOnce.iterableOnceExtensionMethods
+import scala.collection.View.Empty.++
 import scala.collection.mutable.ListBuffer
 import scala.language.postfixOps
 import scala.math.BigDecimal.double2bigDecimal
 import scala.math.abs
+import scala.util.control.Breaks.{break, _}
 object Assignment_1_Serhii_LypnykApp extends App {
   println("Hello World")
   val week = List("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
@@ -41,15 +43,25 @@ object Assignment_1_Serhii_LypnykApp extends App {
   println(AllDaysWhileLoop())
 
   //  Ex. 2a
-//  var days = ""
-  //  def AllDaysWithRecursion(n: BigInt): BigInt = {
-  //
-  //    if (n <= 1)
-  //      1
-  //    else
-  //      n * factorial(n - 1)
-  //  }
-  //  println(AllDaysWithRecursion())
+  var days = ""
+//  var i = 0
+  def AllDaysWithRecursion(i: Int): String = {
+    var newI = i
+    if (week(newI) != week.last){
+        days += s"${week(newI)}, "
+//        print(newI)
+        newI += 1
+//        print(newI)
+        AllDaysWithRecursion(newI)
+    }
+    else {
+        days += s"${week(i)}"
+      }
+
+    days
+  }
+  println("uuuu")
+  println(AllDaysWithRecursion(0))
 
 
   //  Ex. 4a
