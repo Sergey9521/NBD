@@ -1,0 +1,12 @@
+[
+  {
+    "_id": "Male",
+    "avg_weight": null,
+    "avg_height": null
+  },
+  {
+    "_id": "Female",
+    "avg_weight": null,
+    "avg_height": null
+  }
+]
