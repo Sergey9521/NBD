@@ -1,0 +1,1 @@
+printjson(db.qwerty.remove({$expr: {$gt:[{$toDouble: "$height"},190]}}))

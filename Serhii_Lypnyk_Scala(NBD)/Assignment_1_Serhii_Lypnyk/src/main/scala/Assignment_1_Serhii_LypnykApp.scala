@@ -8,17 +8,19 @@ import scala.math.abs
 import scala.util.control.Breaks.{break, _}
 object Assignment_1_Serhii_LypnykApp extends App {
   println("Hello World")
-  val week = List("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
-
+  var week = List("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
+//  var days = ""
 //  Ex. 1a
-  def AllDaysForLoop() = {
+  def AllDaysForLoop(weeks :List[String]) = {
     var days = ""
-    for (
-      day <- week
-    ) if (day != week.last) days += s"$day, " else days += s"$day"
+    for (day <- weeks)
+      if (day != weeks.last)
+        days += s"$day, "
+      else
+        days += s"$day"
     days
   }
-  println(AllDaysForLoop())
+  println(AllDaysForLoop(week))
 
   //  Ex. 1b
   def AllDaysForLoopStartsWithS() = {

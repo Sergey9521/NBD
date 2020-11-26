@@ -1,0 +1,1 @@
+printjson(db.qwerty.update({"location.city":"Moscow"},{$set:{ "location.city":"Moskwa"}},{multi:true}))

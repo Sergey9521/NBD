@@ -1,0 +1,1 @@
+printjson(db.qwerty.updateMany({job:"Editor"},{$unset:{"email":1}}))

@@ -1,0 +1,1 @@
+printjson(db.qwerty.findOne( { nationality: "China",sex:"Female" } ))
