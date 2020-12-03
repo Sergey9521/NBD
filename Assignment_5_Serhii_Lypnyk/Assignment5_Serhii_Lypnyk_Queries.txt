@@ -1,0 +1,45 @@
+Build the following queries
+ 
+1.	All movies
+	match (m:Movie) return m
+
+2.	All movies in which Hugo Weaving played a role
+	match (a:Person)-[:ACTED_IN]->(m:Movie) where a.name="Hugo Weaving" return m
+
+3.	Directors of movies in which Hugo Weaving played a role
+	match (a:Person)-[:ACTED_IN]->(m:Movie) where a.name="Hugo Weaving" match (d:Person)-[:DIRECTED]-(m) return distinct d
+
+4.	All actors playing in the same movies as Hugo Weaving
+	match (a:Person)-[:ACTED_IN]->(m:Movie) where a.name="Hugo Weaving" match (d:Person)-[:ACTED_IN]-(m) return distinct d
+ 
+5.	All movies with actors starring in Matrix
+	match (p:Person)-[:ACTED_IN]-(m:Movie) where m.title="The Matrix" with p as actor match (p)-[:ACTED_IN]-(z:Movie) return z
+
+6.	List of actors (actor = person playing in at least one movie) with amount of movies they played roles in 
+	match (n:Person)-[:ACTED_IN]->(m:Movie) WITH n,count(m) as mc return n,mc
+
+7.	List of people who both wrote the screenplay and directed a movie, plus titles of such movies (screenwriter===director + movie title)
+	match (p:Person)-[:WROTE]-(m:Movie) with p, m match (p)-[:DIRECTED]-(m) return p, m.title
+
+8.	List of movies in which both Hugo Weaving and Keanu Reeves played a role
+	match (p:Person)-[r:ACTED_IN]-(m:Movie) where p.name="Hugo Weaving" with p, m as Movies match (a:Person)-[:ACTED_IN]-(m) where a.name="Keanu Reeves" return m
+
+9.	Query or set of queries that will add Captain America:The First Avenger together with adding information about director, screenwriters and actors playing main roles. Use IMDB short info version http://www.imdb.com/title/tt0458339/ .
+	
+	Create (CaptainAmerica:Movie{title:'Captain America: The First Avenger'})
+	Create (JoeJohnson)-[:DIRECTED]->(CaptainAmerica)
+	
+	Create (ChristopherMarkus:Person{name:'Christopher Markus', born:1970})
+	Create (StephenMcFeely:Person{name:'Stephen McFeely', born:1969})
+	Create (JoeSaimon:Person{name:'Joe Saimon', born:1913})	
+	Create (ChristopherMarkus)-[:WROTE]->(CaptainAmerica)
+	Create (StephenMcFeely)-[:WROTE]->(CaptainAmerica)
+	Create (JoeSaimon)-[:WROTE]->(CaptainAmerica)
+
+	Create (ChrisEvans:Person{name:'Chris Evans', born:1981})
+	Create (HayleyAtwell:Person{name:'Samuel L. Jackson', born:1982})
+	Create (ChrisEvans)-[:ACTED_IN]->(CaptainAmerica)
+	Create (HayleyAtwell)-[:ACTED_IN]->(CaptainAmerica)
+
+10.	Query that shows all information added in Query 9 (movie, actors, director, screenwriter)
+	match (a:Person)-[r]->(m:Movie) WHERE m.title="Captain America: The First Avenger" RETURN a,r,m
