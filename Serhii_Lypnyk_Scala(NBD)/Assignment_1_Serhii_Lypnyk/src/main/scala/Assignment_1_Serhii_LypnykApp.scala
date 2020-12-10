@@ -12,7 +12,7 @@ object Assignment_1_Serhii_LypnykApp extends App {
   var week = List("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
 //  var days = ""
 
-  
+
   //  Ex. 1a
   def AllDaysForLoop(weeks :List[String]) = {
     var days = ""
@@ -75,7 +75,7 @@ object Assignment_1_Serhii_LypnykApp extends App {
   //  Ex. 2b
   def AllDaysWithRecursionFromLast(strList: List[String]): String = {
     if (strList.isEmpty) ""
-    else strList.last + ", " + rec2(strList.splitAt(strList.length-1)._1)  //разрезаем на два списка в предпоследнем и берем первый список
+    else strList.last + ", " + AllDaysWithRecursionFromLast(strList.splitAt(strList.length-1)._1)  //разрезаем на два списка в предпоследнем и берем первый список
   }
   println(AllDaysWithRecursionFromLast(week))
 
