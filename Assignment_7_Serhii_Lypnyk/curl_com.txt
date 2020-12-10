@@ -1,0 +1,43 @@
+TASK 1
+
+curl -i -XPUT -H "Content-Type: application/json" -d '{"brand":"BNW","model":"420i","hp":333,"is_available":true}' http://localhost:8098/buckets/s22554/keys/car1
+curl -i -XPUT -H "Content-Type: application/json" -d '{"brand":"BNW","model":"720i","hp":3033,"is_available":false}' http://localhost:8098/buckets/s22554/keys/car2
+curl -i -XPUT -H "Content-Type: application/json" -d '{"brand":"Mercedes","model":"W223","hp":733,"is_available":true}' http://localhost:8098/buckets/s22554/keys/car3
+curl -i -XPUT -H "Content-Type: application/json" -d '{"brand":"Toyota","model":"Camry3.5","hp":376,"is_available":true}' http://localhost:8098/buckets/s22554/keys/car4
+curl -i -XPUT -H "Content-Type: application/json" -d '{"brand":"Honda","model":"Accord","hp":150,"is_available":true}' http://localhost:8098/buckets/s22554/keys/car5
+
+
+TASK 2
+
+curl -i http://localhost:8098/buckets/s22554/keys/car4
+
+
+TASK3
+
+curl -i -XPUT -H "Content-Type: application/json" -d '{"brand":"BMW","model":"X7M","hp":1000,"is_available":true, "is_new":true}' http://localhost:8098/buckets/s22554/keys/car2
+
+TASK4
+
+curl -i -XPUT -H "Content-Type: application/json" -d '{"brand":"BMW","model":"X7M","hp":1000}' http://localhost:8098/buckets/s22554/keys/car2
+
+TASK5
+curl -i -XPUT -H "Content-Type: application/json" -d '{"brand":"BMW","model":"X7M","hp":1000,"is_available":true, "is_new":true}' http://localhost:8098/buckets/s22554/keys/car2
+TASK6
+
+curl -i -XDELETE http://localhost:8098/buckets/s22554/keys/car2
+
+TASK7
+
+curl -i http://localhost:8098/buckets/s22554/keys/car2
+
+TASK8
+
+curl -XPOST -i -H "Content-Type: application/json" -d '{"brand":"BMW","model":"X5M","hp":1200,"is_available":true, "is_new":false}' http://localhost:8098/buckets/s22554/keys
+
+TASK9
+
+curl -i http://localhost:8098/buckets/s22554/keys/AnroxF8llqteYw8ueBw7KfpGsam
+
+TASK10
+
+curl -i -XDELETE http://localhost:8098/buckets/s22554/keys/AnroxF8llqteYw8ueBw7KfpGsam

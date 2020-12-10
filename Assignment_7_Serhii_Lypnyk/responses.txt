@@ -1,0 +1,141 @@
+TASK 1
+
+HTTP/1.1 204 No Content
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Wed, 09 Dec 2020 15:22:18 GMT
+Content-Type: application/json
+Content-Length: 0
+
+HTTP/1.1 204 No Content
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Wed, 09 Dec 2020 15:25:25 GMT
+Content-Type: application/json
+Content-Length: 0
+
+HTTP/1.1 204 No Content
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Wed, 09 Dec 2020 15:26:27 GMT
+Content-Type: application/json
+Content-Length: 0
+
+HTTP/1.1 204 No Content
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Wed, 09 Dec 2020 15:27:41 GMT
+Content-Type: application/json
+Content-Length: 0
+
+HTTP/1.1 204 No Content
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Wed, 09 Dec 2020 15:29:45 GMT
+Content-Type: application/json
+Content-Length: 0
+
+
+
+TASK 2
+
+HTTP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8DAbyfTWWq5UZGNQFM5gSGfNYGd5muN7kywIA
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Link: </buckets/s22554>; rel="up"
+Last-Modified: Wed, 09 Dec 2020 15:27:41 GMT
+ETag: "1oG4s8GJEX13p4IL8nUgES"
+Date: Wed, 09 Dec 2020 15:31:48 GMT
+Content-Type: application/json
+Content-Length: 66
+
+{"brand":"Toyota","model":"Camry3.5","hp":376,"is_available":true}% 
+
+
+TASK 3
+
+HTTP/1.1 204 No Content
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Wed, 09 Dec 2020 15:34:22 GMT
+Content-Type: application/json
+Content-Length: 0
+
+
+TASK 4
+
+HTTP/1.1 204 No Content
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Wed, 09 Dec 2020 15:38:08 GMT
+Content-Type: application/json
+Content-Length: 0
+
+
+TASK 5
+
+HTTP/1.1 204 No Content
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Wed, 09 Dec 2020 15:40:52 GMT
+Content-Type: application/json
+Content-Length: 0
+
+
+TASK 6
+
+HTTP/1.1 204 No Content
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Wed, 09 Dec 2020 15:44:56 GMT
+Content-Type: application/json
+Content-Length: 0
+
+
+TASK 7
+
+HTTP/1.1 404 Object Not Found
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Wed, 09 Dec 2020 15:45:51 GMT
+Content-Type: text/plain
+Content-Length: 10
+
+not found
+
+
+TASK 8
+
+HTTP/1.1 201 Created
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Location: /buckets/s22554/keys/AnroxF8llqteYw8ueBw7KfpGsam
+Date: Wed, 09 Dec 2020 15:49:17 GMT
+Content-Type: applicat~ion/json
+Content-Length: 0
+
+
+TASK 9
+
+HTTP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8DAbyfTXWZmYMDOqCGUyJjHmsDH9zXW/yZQEA
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Link: </buckets/s22554>; rel="up"
+Last-Modified: Wed, 09 Dec 2020 15:49:17 GMT
+ETag: "2tRDWIzkr5VHTcPe0WQx1"
+Date: Wed, 09 Dec 2020 15:50:13 GMT
+Content-Type: applicat~ion/json
+Content-Length: 75
+
+{"brand":"BMW","model":"X5M","hp":1200,"is_available":true, "is_new":false}% 
+
+
+TASK 10
+
+HTTP/1.1 204 No Content
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Wed, 09 Dec 2020 15:51:13 GMT
+Content-Type: applicat~ion/json
+Content-Length: 0
