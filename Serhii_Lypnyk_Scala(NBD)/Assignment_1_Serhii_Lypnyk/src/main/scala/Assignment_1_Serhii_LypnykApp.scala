@@ -1,4 +1,5 @@
 import scala.Console.in
+import scala.annotation.tailrec
 import scala.collection.IterableOnce.iterableOnceExtensionMethods
 import scala.collection.View.Empty.++
 import scala.collection.mutable.ListBuffer
@@ -10,7 +11,9 @@ object Assignment_1_Serhii_LypnykApp extends App {
   println("Hello World")
   var week = List("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
 //  var days = ""
-//  Ex. 1a
+
+  
+  //  Ex. 1a
   def AllDaysForLoop(weeks :List[String]) = {
     var days = ""
     for (day <- weeks)
@@ -22,6 +25,7 @@ object Assignment_1_Serhii_LypnykApp extends App {
   }
   println(AllDaysForLoop(week))
 
+
   //  Ex. 1b
   def AllDaysForLoopStartsWithS() = {
     var days = ""
@@ -31,6 +35,7 @@ object Assignment_1_Serhii_LypnykApp extends App {
     days
   }
   println(AllDaysForLoopStartsWithS())
+
 
   //  Ex. 1c
   def AllDaysWhileLoop() = {
@@ -43,6 +48,7 @@ object Assignment_1_Serhii_LypnykApp extends App {
     days
   }
   println(AllDaysWhileLoop())
+
 
   //  Ex. 2a
   var days = ""
@@ -66,6 +72,26 @@ object Assignment_1_Serhii_LypnykApp extends App {
   println(AllDaysWithRecursion(0))
 
 
+  //  Ex. 2b
+  def AllDaysWithRecursionFromLast(strList: List[String]): String = {
+    if (strList.isEmpty) ""
+    else strList.last + ", " + rec2(strList.splitAt(strList.length-1)._1)  //разрезаем на два списка в предпоследнем и берем первый список
+  }
+  println(AllDaysWithRecursionFromLast(week))
+
+
+  //  Ex. 3
+  def AllDaysWithTailRecursion(strList: List[String]): String = {
+    @tailrec
+    def step( str: List[String], result: String): String = {
+      if (str.isEmpty) result
+      else step(str.splitAt(1)._2, result + str.head + ", ")
+    }
+    step(strList, "")
+  }
+  println(AllDaysWithTailRecursion(week))
+
+
   //  Ex. 4a
   def AllDaysFoldLeft() = {
     week.foldLeft("") { (acc, i) =>
@@ -73,6 +99,7 @@ object Assignment_1_Serhii_LypnykApp extends App {
     }
   }
   println(AllDaysFoldLeft())
+
 
   //  Ex. 4b
   def AllDaysFoldRight() = {
@@ -82,6 +109,7 @@ object Assignment_1_Serhii_LypnykApp extends App {
   }
   println(AllDaysFoldRight())
 
+
   //  Ex. 4c
   def AllDaysFoldLeftStartsWithS() = {
     var week_filtered = week.filter(_.startsWith("S"))
@@ -90,6 +118,7 @@ object Assignment_1_Serhii_LypnykApp extends App {
     }
   }
   println(AllDaysFoldLeftStartsWithS())
+
 
   //  Ex. 5
   def MappingReduce() = {
@@ -101,6 +130,7 @@ object Assignment_1_Serhii_LypnykApp extends App {
   }
   println(MappingReduce())
 
+
   //  Ex. 6
   def ListMapping() = {
     val any_list = List(1,2,3,4,5)
@@ -108,18 +138,13 @@ object Assignment_1_Serhii_LypnykApp extends App {
   }
   println(ListMapping())
 
+
   //  Ex. 7
-//  def ListAbsRange() = {
-//    val any_list = List(1, -59.01, 11, 7.21, 17.01, 8.32, 1.57, -1.11, -3, 10, 2, 3, 4, 5)
-//    var bla = -5.0 to 12.0 by 0.001
-////    any_list map (n => if (bla.contains(n)) {abs(n)})
-//    var tempo = new ListBuffer[Double]()
-//    for (i <- -5.0 to 12.0 by 0.01) {
-//      if (any_list.contains(i)) tempo += i.abs
-//    }
-//    val temp = temp.toList
-//  }
-//  println(ListAbsRange())
+  val any_list = List(1, -59.01, 11, 7.21, 17.01, 8.32, 1.57, -1.11, -3, 10, 2, 3, 4, 5)
+  def ListAbsRange( lis: List[Double]): List[Double] = {
+    lis.filter(_ <= 12 ).filter(_ >= -5).map(x => abs(x))
+   }
+  println(ListAbsRange(any_list))
 
 
   //  Ex. 8
@@ -128,6 +153,17 @@ object Assignment_1_Serhii_LypnykApp extends App {
     any_tuple.productIterator.foreach(println)
   }
   println(PrintTuple())
+
+
+  //  Ex.9
+  val nums = List( 0, 1, 2, 5, 7, 100, 21, 22, 24, 30, 77 )
+  val zero = no_zeros(nums)
+  def no_zeros( lis: List[Int]): List[Int] = {
+    if( lis.isEmpty ) List()
+    else if( lis.head != 0 ) List(lis.head) ::: no_zeros(lis.tail)
+    else no_zeros(lis.tail)
+  }
+  println(zero)
 
 
   //  Ex. 10
